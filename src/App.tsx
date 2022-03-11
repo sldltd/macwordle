@@ -184,7 +184,8 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
       />
       <StatsModal
         isOpen={isStatsModalOpen}
-        handleClose={() => {setIsStatsModalOpen(false); setSuccessAlert('')}}
+        //handleClose={() => {setIsStatsModalOpen(false); setSuccessAlert('')}}
+				handleClose={() => setIsStatsModalOpen(false)}
         guesses={guesses}
         gameStats={stats}
         isGameLost={isGameLost}
