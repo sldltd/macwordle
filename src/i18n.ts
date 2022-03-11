@@ -29,7 +29,7 @@ i18next
     react: {
       useSuspense: false,
     },
-    saveMissing: true,
+    saveMissing: false,
   })
 
 export default i18next

@@ -12,7 +12,7 @@ type Props = {
 
 export const Alert = ({ isOpen, message, solutionLink, variant = 'warning' }: Props) => {
   const classes = classNames(
-    'fixed top-20 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
+    'alert-div fixed top-20 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
     {
       'bg-rose-200': variant === 'warning',
       'bg-green-200 z-20': variant === 'success',
@@ -33,7 +33,7 @@ export const Alert = ({ isOpen, message, solutionLink, variant = 'warning' }: Pr
       <div className={classes}>
         <div className="p-4">
           <p className="text-sm text-center font-medium text-gray-900">
-            {message} <div dangerouslySetInnerHTML={{__html: solutionLink}} />
+            {message} <br/><span dangerouslySetInnerHTML={{__html: solutionLink}} />
           </p>
         </div>
       </div>

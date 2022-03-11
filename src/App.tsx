@@ -28,6 +28,7 @@ const ALERT_TIME_MS = 2000
 const solutionLink = '<a class="underline font-bold" href="http://dsl.ac.uk/results/' + solution + '" target="_blank" rel="noreferrer">Look up solution on DSL</a>'
 
 
+
 const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
   const [isGameWon, setIsGameWon] = useState(false)
@@ -149,7 +150,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   }*/
 
   return (
-    <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8" >
 			<div>
 				<a href={CONFIG.wordListSourceLink} target="_blank" rel="noreferrer"><img className="org-logo" alt="DSL logo" src={process.env.PUBLIC_URL + CONFIG.sourceLogo} width="100" height="100"/></a>
 			</div>
