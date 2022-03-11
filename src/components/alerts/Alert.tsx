@@ -5,10 +5,13 @@ import classNames from 'classnames'
 type Props = {
   isOpen: boolean
   message: string
+	solutionLink: string
   variant?: 'success' | 'warning'
 }
 
-export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
+const dsllink = '<a class="underline font-bold" href="dsl.ac.uk">DSL</a>'
+
+export const Alert = ({ isOpen, message, solutionLink, variant = 'warning' }: Props) => {
   const classes = classNames(
     'fixed top-20 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
     {
@@ -31,7 +34,7 @@ export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
       <div className={classes}>
         <div className="p-4">
           <p className="text-sm text-center font-medium text-gray-900">
-            {message}
+            {message} <div dangerouslySetInnerHTML={{__html: solutionLink}} />
           </p>
         </div>
       </div>

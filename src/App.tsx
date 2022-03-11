@@ -25,6 +25,9 @@ import { withTranslation, WithTranslation } from 'react-i18next'
 
 const ALERT_TIME_MS = 2000
 
+const solutionLink = '<a class="underline font-bold" href="http://dsl.ac.uk/results/' + solution + '" target="_blank" rel="noreferrer">Look up solution on DSL</a>'
+
+
 const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
   const [isGameWon, setIsGameWon] = useState(false)
@@ -71,7 +74,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
       )
       setTimeout(() => {
-        setSuccessAlert('')
+        //setSuccessAlert('')
         setIsStatsModalOpen(true)
       }, ALERT_TIME_MS)
     }
@@ -181,14 +184,15 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
       />
       <StatsModal
         isOpen={isStatsModalOpen}
-        handleClose={() => setIsStatsModalOpen(false)}
+        handleClose={() => {setIsStatsModalOpen(false); setSuccessAlert('')}}
         guesses={guesses}
         gameStats={stats}
         isGameLost={isGameLost}
         isGameWon={isGameWon}
         handleShare={() => {
           setSuccessAlert(t('gameCopied'))
-          return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
+          //return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
+					return
         }}
       />
       <AboutModal
@@ -204,11 +208,12 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
         {t('about')}
       </button>
 			
-      <Alert message={t('notEnoughLetters')} isOpen={isNotEnoughLetters} />
-      <Alert message={t('wordNotFound')} isOpen={isWordNotFoundAlertOpen} />
-      <Alert message={t('solution', { solution })} isOpen={isGameLost} />
+      <Alert message={t('notEnoughLetters')} isOpen={isNotEnoughLetters} solutionLink='' />
+      <Alert message={t('wordNotFound')} isOpen={isWordNotFoundAlertOpen} solutionLink='' />
+      <Alert message={t('solution', { solution })} isOpen={isGameLost} solutionLink={solutionLink} />
       <Alert
         message={successAlert}
+				solutionLink={solutionLink}
         isOpen={successAlert !== ''}
         variant="success"
       />
