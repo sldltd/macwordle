@@ -9,7 +9,6 @@ type Props = {
   variant?: 'success' | 'warning'
 }
 
-const dsllink = '<a class="underline font-bold" href="dsl.ac.uk">DSL</a>'
 
 export const Alert = ({ isOpen, message, solutionLink, variant = 'warning' }: Props) => {
   const classes = classNames(
