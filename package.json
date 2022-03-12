@@ -1,7 +1,7 @@
 {
     "name": "macwordle",
     "version": "0.1.0",
-    "homepage": "http://sldltd.github.io/macwordle",
+    "homepage": "http://macwordle.co.uk",
     "private": true,
     "dependencies": {
         "@bcgov/bc-sans": "^1.0.1",
