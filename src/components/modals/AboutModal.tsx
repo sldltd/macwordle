@@ -33,6 +33,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
           </a>
           .
         </Trans>
+				<br/>Guesses are checked anent a leet o 5000 wirds. We ken the leet isnae complete.
 			</p><br/>
       <p className="text-sm text-gray-500">
         <Trans i18nKey="aboutCodeSentence">
